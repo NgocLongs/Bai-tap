@@ -1,0 +1,71 @@
+.container {
+	width: 100%;
+	border-bottom: 1px solid grey;
+}
+.background {
+	background: #FFBA00;
+}
+.top-header {
+	width: 80%;
+	margin: 0 auto;
+	height: 50px;
+	background: #FFBA00;
+	position: relative;
+}
+.bottom-header {
+	width: 80%;
+	margin: 0 auto;
+	height: 50px;
+	position: relative;
+}
+.menu ul {
+	list-style: none;
+}
+.menu ul li {
+	float: left;
+	margin-right: 5px;
+	padding: 0px 2px;
+}
+.menu ul li:hover {
+	background: #FC9807;
+}
+.menu ul li a {
+	text-decoration: none;
+	color: #000;
+}
+#dangtin {
+	background: #886A08;
+	border: 1px solid #886A08;
+	color: #fff;
+	padding: 5px 10px;
+}
+#arrow {
+	border-bottom: 3px solid green;
+	padding-bottom: 22px;
+}
+.align {
+	margin-top: 18px;
+}
+
+.content {
+	width: 80%;
+	margin: 20px auto;
+	padding: 0px 40px;
+}
+.img {
+	margin: 10px;
+	float: left;
+}
+#icon-close {
+	position: relative;
+	left: -15px;
+	top: -65px;
+	font-size: 180%;
+}
+.note {
+	border: 1px solid #A9F5F2;
+	border-radius: 5px;
+	background: #A9F5F2;
+	padding: 20px;
+	margin-top: 20px;
+}
