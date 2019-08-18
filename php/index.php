@@ -79,8 +79,8 @@
 			<input name="submit" type="submit" class="btn btn-default">
 		</form>
 		<?php 
-			echo "Value At Index ".$index. " là " .GetValueOfIndex($index);
-			echo "Value At Index ".$index. " là " .GetValueOfIndex2($index); 
+			echo "Value At Index ".$index. " is " .GetValueOfIndex($index);
+			echo "<br>alue At Index ".$index. " is " .GetValueOfIndex2($index); 
 		?>
 		
 		<!-- jQuery -->
