@@ -87,7 +87,7 @@
 						<div class="img">
 							<a href="" id="select_img"><img src="images/upload.png" alt="" width="150px" height="150"></a>
 							<input type="file" id="img" name="file[]" multiple>
-							
+							<input type="submit" value="Upload" name="up" id="up" class="btn btn-info">
 						</div>
 					</form>
 				</div>

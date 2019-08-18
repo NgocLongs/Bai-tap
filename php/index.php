@@ -30,20 +30,22 @@
 	}
 
 	function GetValueOfIndex2($index) {
-		$before = 1;
 		$current = 1;
 
 		for ($i = 1; $i <= $index; $i++) {
 			if ($i % 2 == 0) {
-				$current = $before + 1;
+				$current = $current + 1;
 			} else {
-				$current = $before;
+				$current = $current;
 			}
-			$before = $current;
 		}
 
 		return $current;
 	}	
+
+	function GetValue($index) {
+		return (int)($index/2) + 1;
+	}
 	
 ?>
 <!DOCTYPE html>
@@ -80,7 +82,8 @@
 		</form>
 		<?php 
 			echo "Value At Index ".$index. " is " .GetValueOfIndex($index);
-			echo "<br>alue At Index ".$index. " is " .GetValueOfIndex2($index); 
+			echo "<br>Value At Index ".$index. " is " .GetValueOfIndex2($index);
+			echo "<br>Value At Index ".$index. " is " .GetValue($index); 
 		?>
 		
 		<!-- jQuery -->

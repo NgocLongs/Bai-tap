@@ -13,11 +13,47 @@
 		close.parentNode.removeChild(close);
 	}
 
-// <!-- Check And Upload File -->
-	
+
+
+
+//Show Multiple Image Preview
+
 	$(document).ready(function(){
 
-		$('#img').change(function(){
+		$("#img").change(function () {
+	        if (typeof (FileReader) != "undefined") {
+
+	            var preview = $("#preview");
+	            preview.html("");
+	            var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.png)$/;
+
+	            $($(this)[0].files).each(function () {
+
+	                var file = $(this);
+	                if (regex.test(file[0].name.toLowerCase())) {
+	                    var reader = new FileReader();
+	                    reader.onload = function (e) {
+	                        var img = $("<img id='imagePreview' />");
+	                        img.attr("style", "height:150px;width: 150px");
+	                        img.attr("src", e.target.result);
+	                        preview.append(img);
+	                        preview.append('<i class="fa fa-times-circle" id="icon-close" onclick="removeImage(this)"></i>');
+	                    }
+	                    reader.readAsDataURL(file[0]);
+	                } else {
+	                    alert(file[0].name + " is not a valid image file.");
+	                    preview.html("");
+	                    return false;
+	                }
+	            });
+	        } else {
+	            alert("This browser does not support HTML5 FileReader.");
+	        }
+	    });
+	    
+
+	//<!-- Check And Upload File -->
+		$('#up').on('click',function(){
 
 			var file_data = $('#img').prop('files')[0];
 			var type = file_data.type;
@@ -44,16 +80,9 @@
 				     	dataType: 'json',
 				     	contentType: false,
 				     	processData: false,
-				     	success: function (response) {
-
-					       	for(var i = 0; i < response.length; i++) {
-					         	var src = response[i];
-
-					         	// Add img in <div id='preview'>
-					         	$('#preview').append('<img id="imagePreview" src="'+src+'" width="150px;" height="150px">');
-					         	$('#preview').append('<i class="fa fa-times-circle" id="icon-close" onclick="removeImage(this)"></i>');
-					       	}
-
+				     	success: function () {
+					       	$('.status').text("Success!");
+							$('#img').val('');
 				     	}
 				   	});
 				} else {
@@ -68,4 +97,10 @@
 			}
 		});
 	});
+
+
+
+
+
+	
 
